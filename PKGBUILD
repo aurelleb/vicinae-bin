@@ -3,14 +3,14 @@
 
 pkgname=vicinae-bin
 pkgver=v0.3.0
-pkgrel=2
+pkgrel=1
 pkgdesc="Raycast like FOSS app on Linux"
 arch=('x86_64')
 url="https://github.com/vicinaehq/vicinae"
 license=('GPL3')
 depends=(nodejs qt6-base qt6-svg protobuf cmark-gfm layer-shell-qt libqalculate minizip qtkeychain-qt6)
-provides=("vicinae=$pkgver")
-conflicts=('vicinae')
+provides=("vicinae-bin=$pkgver")
+conflicts=('vicinae' 'vicinea-git')
 
 source=(
   "${url}/releases/download/$pkgver/${pkgname%-bin}-linux-$arch-$pkgver.tar.gz"
