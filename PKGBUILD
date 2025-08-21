@@ -2,7 +2,7 @@
 # Maintainer: Arjix <me@arjix.dev>
 
 pkgname=vicinae-bin
-pkgver=0.3.0
+pkgver=0.4.0
 pkgrel=1
 pkgdesc="Raycast like FOSS app on Linux"
 arch=('x86_64')
@@ -18,13 +18,14 @@ source=(
   "https://raw.githubusercontent.com/vicinaehq/vicinae/refs/tags/v$pkgver/vicinae/icons/vicinae.svg"
 )
 
-sha256sums=('d0ede6366575a1a48fe2c89ef87e768db79f701227c92b130275dd30e9cf2e18'
-            'd9c598cf0070cb358df7937e4d2576f449d0cd39e01cc01ebc7772d032b59b7c'
+sha256sums=('fb51aaa6a259f279737ba02771f0dd54af638ce212c7605fcaee0b3664edecdb'
+            '4597dcdc30ef283f994c5a5fa65725f9bae7627afc1e12a2aa9bef24f8fa6eee'
             '9b3957bd45e7508dc2d4e16d3186fc679752c0554ad43755cf0044e4f6484dab')
 
 package() {
   # Bin
   install -Dm755 "$srcdir/bin/${pkgname%-bin}" "$pkgdir/usr/bin/${pkgname%-bin}"
+  install -Dm755 "$srcdir/bin/vicinae-wlr-clip" "$pkgdir/usr/bin/vicinae-wlr-clip"
 
   # Desktop entry
   install -Dm644 "$srcdir/share/applications/${pkgname%-bin}.desktop" "$pkgdir/usr/share/applications/${pkgname%-bin}.desktop"
