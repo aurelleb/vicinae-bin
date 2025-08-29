@@ -8,7 +8,7 @@ pkgdesc="Raycast like FOSS app on Linux"
 arch=('x86_64')
 url="https://github.com/vicinaehq/vicinae"
 license=('GPL3')
-depends=(nodejs qt6-base qt6-svg protobuf cmark-gfm layer-shell-qt libqalculate minizip qtkeychain-qt6)
+depends=(nodejs qt6-base qt6-svg layer-shell-qt libqalculate qtkeychain-qt6)
 provides=("vicinae")
 conflicts=("vicinae")
 
