@@ -3,7 +3,7 @@
 
 pkgname=vicinae-bin
 pkgver=0.12.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Raycast like FOSS app on Linux"
 arch=('x86_64')
 url="https://github.com/vicinaehq/vicinae"
@@ -18,7 +18,7 @@ source=(
   "https://raw.githubusercontent.com/vicinaehq/vicinae/refs/tags/v$pkgver/vicinae/icons/vicinae.svg"
 )
 
-sha256sums=('d42ec21b6b6242021b0c677fbf00602548dcb564236ad788ea13085104d8750f'
+sha256sums=('f1dc05032b474d0064f005cd609a71e7389f3125a6e8016da4ff362a76db6698'
             'ad9c4ab5a52b13c9c9d1ae705ed72730d333a3c4e528d49bea983f221f89aa42'
             '9b3957bd45e7508dc2d4e16d3186fc679752c0554ad43755cf0044e4f6484dab')
 
