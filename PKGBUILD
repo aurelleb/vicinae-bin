@@ -3,7 +3,7 @@
 
 pkgname=vicinae-bin
 pkgver=0.16.10
-pkgrel=1
+pkgrel=2
 pkgdesc="Raycast like FOSS app on Linux"
 arch=('x86_64')
 url="https://github.com/vicinaehq/vicinae"
@@ -18,16 +18,25 @@ source=(
 )
 
 sha256sums=('ed08b65b4db2d1a97cf057367cd148fe5a38a2c50630b129ed9c6b4e3ad4cede'
-            '3e946bcb7f3c2faa3568218987012db336be92acff805a373b6c10bdeaa9e7a8')
+  '3e946bcb7f3c2faa3568218987012db336be92acff805a373b6c10bdeaa9e7a8')
 
 package() {
-  install -dm755 "$pkgdir/usr"
-  cp -rp \
-  	  "$srcdir/bin" \
-  	  "$srcdir/share" \
-  	  "$srcdir/lib" \
-  	"$pkgdir/usr"
-  
+  # Bin
+  install -Dm755 "$srcdir/bin/${pkgname%-bin}" "$pkgdir/usr/bin/${pkgname%-bin}"
+
+  # Desktop entry
+  install -Dm644 "$srcdir/share/applications/${pkgname%-bin}.desktop" "$pkgdir/usr/share/applications/${pkgname%-bin}.desktop"
+  install -Dm644 "$srcdir/share/applications/${pkgname%-bin}-url-handler.desktop" "$pkgdir/usr/share/applications/${pkgname%-bin}-url-handler.desktop"
+
+  # Themes
+  cp -r "$srcdir/share/${pkgname%-bin}" "$pkgdir/usr/share/"
+
+  # Systemd Service
+  install -Dm644 "$srcdir/lib/systemd/user/${pkgname%-bin}.service" "$pkgdir/usr/lib/systemd/user/${pkgname%-bin}.service"
+
+  # SVG icon
+  install -Dm644 "$srcdir/share/icons/hicolor/512x512/apps/${pkgname%-bin}.png" "$pkgdir/usr/share/icons/hicolor/512x512/apps/${pkgname%-bin}.png"
+
   # Pacman hook
   install -Dm644 "$srcdir/${pkgname%-bin}.hook" "$pkgdir/usr/share/libalpm/hooks/${pkgname%-bin}.hook"
 }
