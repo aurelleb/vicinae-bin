@@ -1,6 +1,6 @@
 pkgbase = vicinae-bin
 	pkgdesc = Raycast like FOSS app on Linux
-	pkgver = 0.18.2
+	pkgver = 0.18.3
 	pkgrel = 1
 	url = https://github.com/vicinaehq/vicinae
 	arch = x86_64
@@ -15,9 +15,9 @@ pkgbase = vicinae-bin
 	depends = minizip
 	provides = vicinae
 	conflicts = vicinae
-	source = https://github.com/vicinaehq/vicinae/releases/download/v0.18.2/vicinae-linux-x86_64-v0.18.2.tar.gz
+	source = https://github.com/vicinaehq/vicinae/releases/download/v0.18.3/vicinae-linux-x86_64-v0.18.3.tar.gz
 	source = vicinae.hook
-	sha256sums = 36c6260dc22946c0e8f371b5f203f3b304735ca4a820058f5ae7f0aee2d1fb3d
+	sha256sums = 92f4c8d82c3063ba24fb4ec8fc1d494578c9b32c3f6459f1233e4ef34317001f
 	sha256sums = 3e946bcb7f3c2faa3568218987012db336be92acff805a373b6c10bdeaa9e7a8
 
 pkgname = vicinae-bin
