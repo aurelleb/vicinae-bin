@@ -3,7 +3,7 @@
 
 pkgname=vicinae-bin
 pkgver=0.19.7
-pkgrel=2
+pkgrel=3
 pkgdesc="Raycast like FOSS app on Linux"
 arch=('x86_64')
 url="https://github.com/vicinaehq/vicinae"
@@ -13,9 +13,9 @@ options=(!strip)
 provides=("vicinae")
 conflicts=("vicinae")
 
-noextract=("vicinae.tgz")
+noextract=("vicinae-${arch}-v${pkgver}-${pkgrel}.tgz")
 source=(
-  "vicinae.tgz::${url}/releases/download/v$pkgver/${pkgname%-bin}-linux-$arch-v$pkgver.tar.gz"
+  "vicinae-${arch}-v${pkgver}-${pkgrel}.tgz::${url}/releases/download/v${pkgver}/${pkgname%-bin}-linux-${arch}-v${pkgver}.tar.gz"
   "vicinae.hook"
 )
 
@@ -24,7 +24,7 @@ sha256sums=('118ff1bc745d2baede739d1fdddc7199d3893adb885b7fcc62de980c8bb6d90a'
 
 prepare() {
   mkdir -p vicinae
-  tar -xzf vicinae.tgz -C vicinae
+  tar -xzf "vicinae-${arch}-v${pkgver}-${pkgrel}.tgz" -C vicinae
 }
 
 package() {
