@@ -5,7 +5,7 @@
 # shellcheck disable=SC2154
 # shellcheck disable=SC2128
 pkgname=vicinae-bin
-pkgver=0.20.2
+pkgver=0.20.3
 pkgrel=1
 pkgdesc="Raycast like FOSS app on Linux"
 arch=('x86_64')
@@ -32,7 +32,7 @@ source=(
   "vicinae.hook"
 )
 
-sha256sums=('6774a353974bae6e98430c831bcfa4b94592a558ce8ff4bbdf76c19a9eba8a6b'
+sha256sums=('c4edc1f11390eb62befa380e52c2133bbd693f5ab2f07ce26982212a44fc4146'
             '3e946bcb7f3c2faa3568218987012db336be92acff805a373b6c10bdeaa9e7a8')
 
 prepare() {
